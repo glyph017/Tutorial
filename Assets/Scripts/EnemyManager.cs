@@ -50,7 +50,7 @@ public class EnemyManager : MonoBehaviour
             maxTimer = Random.Range(timerMin, timerMax);
         }
 
-        timer += 0.1f;
-        yield return new WaitForSeconds(0.1f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
+        timer += 0.025f;
+        yield return new WaitForSeconds(0.025f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
     }
 }

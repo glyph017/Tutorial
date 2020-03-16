@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
             maxTimerBullet = Random.Range(timerMin, timerMax);
         }
 
-        timerBullet += 0.1f;
-        yield return new WaitForSeconds(0.1f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
-    }
+        timerBullet += 0.025f;
+        yield return new WaitForSeconds(0.025f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
+    }   //og num is 0.1f
 }
