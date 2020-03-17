@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BulletEnemyController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class BulletEnemyController : MonoBehaviour
         {
             GameObject.Destroy(this.gameObject); // destroy bullet
             GameObject.Destroy(collision.gameObject); // destroy game object connected to what we collided with
+            
         }
     }
 }
