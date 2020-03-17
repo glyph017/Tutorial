@@ -21,7 +21,10 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("SpawnEnemyTimer");
+        if (!PauseMenu.isPaused)
+        {
+            StartCoroutine("SpawnEnemyTimer");
+        }
     }
 
     void SpawnEnemy()
@@ -38,6 +41,7 @@ public class EnemyManager : MonoBehaviour
         spawnPoint.x = Mathf.Clamp(spawnPoint.x, leftBorder + enemySize.x / 2, rightBorder - enemySize.x / 2);
 
         GameObject.Instantiate(enemy, spawnPoint, new Quaternion(0, 0, 0, 0)); //has to do with rotation
+
     }
 
     IEnumerator SpawnEnemyTimer() //coroutine
@@ -50,7 +54,7 @@ public class EnemyManager : MonoBehaviour
             maxTimer = Random.Range(timerMin, timerMax);
         }
 
-        timer += 0.025f;
-        yield return new WaitForSeconds(0.025f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
+        timer += 0.035f;
+        yield return new WaitForSeconds(0.035f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
     }
 }

@@ -29,9 +29,12 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canFireBullets)
+        if (!PauseMenu.isPaused)
         {
-            StartCoroutine("FireBullet");
+            if (canFireBullets)
+            {
+                StartCoroutine("FireBullet");
+            }
         }
         
         // check if the object is on screen
@@ -59,7 +62,7 @@ public class EnemyController : MonoBehaviour
             maxTimerBullet = Random.Range(timerMin, timerMax);
         }
 
-        timerBullet += 0.025f;
-        yield return new WaitForSeconds(0.025f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
+        timerBullet += 0.04f;
+        yield return new WaitForSeconds(0.04f); // yield is bc it's a coroutine --> coroutine yields to the rest of the script
     }   //og num is 0.1f
 }
